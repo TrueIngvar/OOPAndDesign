@@ -57,16 +57,21 @@ public class Radio {
     }
 
     public int increaseVolume(int currentVolume) { //Метод для увеличения громкости
+        int maxVolume = 100;
         if (currentVolume < 100) {
             radioVolume = currentVolume + 1;
+        } else {
+                    currentVolume = maxVolume;
+                   radioVolume = currentVolume;
         }
         return currentVolume;
     }
-    public int increaseAndMaxVolume(int currentVolume) {//Протестировать метод
-        int maxVolume = 100;
-        if (currentVolume >= 100) {
-            radioVolume = currentVolume;
-        }
-        return maxVolume;
-    }
+//    public int increaseAndMaxVolume(int currentVolume) {//Метод, при котором громкость не увеличивается, если громкость 100
+//        int maxVolume = 100;
+//        if (currentVolume >= 100) {
+//            currentVolume = maxVolume;
+//            radioVolume = currentVolume;
+//        }
+//        return maxVolume; //Попробоваться соединить метод increaseVolume и increaseAndMaxVolume
+//    }
 }
