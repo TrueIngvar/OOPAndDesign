@@ -5,7 +5,7 @@ public class Radio {
         return RadioStationNumber;
     }
 
-    public void setRadioStationRange(int radioStationRange){ //Определили диапозон станций 1 и 4
+    public void setRadioStationRange(int radioStationRange) { //Определили диапозон станций
         if (radioStationRange < 0) {
             return;
         }
@@ -20,30 +20,53 @@ public class Radio {
         if (currentRadioStation < 9) {
             RadioStationNumber = currentRadioStation + 1;
             return currentRadioStation;
-        }
-        else {
+        } else {
             return firstStation;
         }
     }
 
-    public int prev(int currentRadioStation) { //Метод для переключения станции на следующую
+    public int prev(int currentRadioStation) { //Метод для переключения станции а предыдущую
         int lastStation = 9;
         if (currentRadioStation > 1) {
             RadioStationNumber = currentRadioStation - 1;
             return currentRadioStation;
-        //} else {
+            //} else {
             //return lastStation;
-             }
-             if (currentRadioStation < 1) {
-                RadioStationNumber = lastStation;
-            }
-            return lastStation;
         }
+        if (currentRadioStation < 1) {
+            RadioStationNumber = lastStation;
+        }
+        return lastStation;
+    }
 
 
     public int radioVolume;
 
-    
+    public int getCurrentRadioVolume() {
+        return radioVolume;
+    }
 
+    public void setRadioVolumeRange(int radioVolumeRange) { //Определили диапозон звука
+        if (radioVolumeRange < 0) {
+            return;
+        }
+        if (radioVolumeRange > 100) {
+            return;
+        }
+        radioVolume = radioVolumeRange;
+    }
 
+    public int increaseVolume(int currentVolume) { //Метод для увеличения громкости
+        if (currentVolume < 100) {
+            radioVolume = currentVolume + 1;
+        }
+        return currentVolume;
+    }
+    public int increaseAndMaxVolume(int currentVolume) {//Протестировать метод
+        int maxVolume = 100;
+        if (currentVolume >= 100) {
+            radioVolume = currentVolume;
+        }
+        return maxVolume;
+    }
 }
