@@ -28,16 +28,22 @@ public class Radio {
 
     public int prev(int currentRadioStation) { //Метод для переключения станции на следующую
         int lastStation = 9;
-        if (currentRadioStation > 0) {
+        if (currentRadioStation > 1) {
             RadioStationNumber = currentRadioStation - 1;
             return currentRadioStation;
+        //} else {
+            //return lastStation;
+             }
+             if (currentRadioStation < 1) {
+                RadioStationNumber = lastStation;
+            }
+            return lastStation;
         }
-        if (currentRadioStation <= 0) {
-            RadioStationNumber = lastStation;
-        }
-        return lastStation;
-    }
+
 
     public int radioVolume;
+
+    
+
 
 }
