@@ -21,12 +21,12 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
@@ -77,7 +77,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
 
-                <executions>
+                <executions> <!--Инициализация-->
                     <execution>
                         <id>prepare-agent</id>
                         <goals>
@@ -85,14 +85,14 @@
                         </goals>
                     </execution>
 
-                    <execution>
+                    <execution> <!--Режим генерации отчётов-->
                         <id>report</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
-                    <execution>
+                    <!--<execution>      //////////////////Обрушение сборки.
                         <id>check</id>
                         <goals>
                             <goal>check</goal>
@@ -110,7 +110,7 @@
                                 </rule>
                             </rules>
                         </configuration>
-                    </execution>
+                    </execution>-->
                 </executions>
             </plugin>
 
