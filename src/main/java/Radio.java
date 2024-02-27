@@ -66,6 +66,17 @@ public class Radio {
         }
         return currentVolume;
     }
+
+    public int decreaseVolume(int currentVolume) { //Метод для уменьшения громкости
+        int minVolume = 0;
+        if (currentVolume > 0) {
+            radioVolume = currentVolume - 1;
+        } else {
+            currentVolume = minVolume;
+            radioVolume = currentVolume;
+        }
+        return currentVolume;
+    }
 //    public int increaseAndMaxVolume(int currentVolume) {//Метод, при котором громкость не увеличивается, если громкость 100
 //        int maxVolume = 100;
 //        if (currentVolume >= 100) {

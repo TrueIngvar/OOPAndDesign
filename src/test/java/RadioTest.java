@@ -169,20 +169,39 @@ public class RadioTest {
     @Test
     public void shouldIncreaseVolume() { //Тест метода увеличения громкости.
         Radio volume = new Radio();
-        volume.increaseVolume(101);
+        volume.increaseVolume(97);
+
+        int expected = 98;
+        int actual = volume.getCurrentRadioVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldntIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100.
+        Radio volume = new Radio();
+        volume.increaseVolume(100);
 
         int expected = 100;
         int actual = volume.getCurrentRadioVolume();
         Assertions.assertEquals(expected, actual);
     }
-//    @Test
-//    public void shouldntIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100 и больше.
-//        Radio volume = new Radio();
-//        volume.increaseAndMaxVolume(100);
-//
-//        int expected = 100;
-//        int actual = volume.getCurrentRadioVolume();
-//        Assertions.assertEquals(expected, actual);
-//    }
+
+    @Test
+    public void shouldDecreaseVolume() { //Тест метода уменьшения громкости.
+        Radio volume = new Radio();
+        volume.decreaseVolume(97);
+
+        int expected = 96;
+        int actual = volume.getCurrentRadioVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldntDecreaseVolume() { //Тест метода, при котором громкость не уменьшается, если громкость 0.
+        Radio volume = new Radio();
+        volume.decreaseVolume(0);
+
+        int expected = 0;
+        int actual = volume.getCurrentRadioVolume();
+        Assertions.assertEquals(expected, actual);
+    }
 
 }
