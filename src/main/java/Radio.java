@@ -39,7 +39,6 @@ public class Radio {
         return lastStation;
     }
 
-
     public int radioVolume;
 
     public int getCurrentRadioVolume() {
@@ -61,8 +60,8 @@ public class Radio {
         if (currentVolume < 100) {
             radioVolume = currentVolume + 1;
         } else {
-                    currentVolume = maxVolume;
-                   radioVolume = currentVolume;
+            currentVolume = maxVolume;
+            radioVolume = currentVolume;
         }
         return currentVolume;
     }
@@ -77,12 +76,4 @@ public class Radio {
         }
         return currentVolume;
     }
-//    public int increaseAndMaxVolume(int currentVolume) {//Метод, при котором громкость не увеличивается, если громкость 100
-//        int maxVolume = 100;
-//        if (currentVolume >= 100) {
-//            currentVolume = maxVolume;
-//            radioVolume = currentVolume;
-//        }
-//        return maxVolume; //Попробоваться соединить метод increaseVolume и increaseAndMaxVolume
-//    }
 }

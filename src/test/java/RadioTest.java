@@ -175,6 +175,7 @@ public class RadioTest {
         int actual = volume.getCurrentRadioVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldntIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100.
         Radio volume = new Radio();
@@ -194,6 +195,7 @@ public class RadioTest {
         int actual = volume.getCurrentRadioVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldntDecreaseVolume() { //Тест метода, при котором громкость не уменьшается, если громкость 0.
         Radio volume = new Radio();
