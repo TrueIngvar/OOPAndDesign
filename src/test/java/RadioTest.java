@@ -55,7 +55,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldChangeRadioStationForwardIfStationIsNine() {//Тест метода переключения станции на следующую. Номер станции = 9
+    public void shouldChangeRadioStationForwardIfStationIsNine() {//Тест метода переключения станции на следующую. Номер станции = 9.
         Radio nextStation = new Radio();
         nextStation.setRadioStationRange(9);
 
@@ -68,13 +68,26 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldChangeRadioStationForwardBeforeNineAndStartsFromZero() {//Тест метода переключения станции на следующую. Номер станции < 9
+    public void shouldChangeRadioStationForwardIfStationIsZero() {//Тест метода переключения станции на следующую. Номер станции = 0.
         Radio nextStation = new Radio();
         nextStation.setRadioStationRange(0);
 
         nextStation.nextRadioStation();
 
         int expected = 1;
+        int actual = nextStation.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldChangeRadioStationForwardIfStationBetweenZeroAndNine() {//Тест метода переключения станции на следующую. Номер станции Между 0 и 9.
+        Radio nextStation = new Radio();
+        nextStation.setRadioStationRange(6);
+
+        nextStation.nextRadioStation();
+
+        int expected = 7;
         int actual = nextStation.getCurrentRadioStationNumber();
 
         Assertions.assertEquals(expected, actual);

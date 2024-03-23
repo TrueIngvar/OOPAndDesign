@@ -26,7 +26,6 @@ public class Radio {
         if (radioStationNumber >= 0) {
             radioStationNumber = radioStationNumber + 1;
         }
-
         if (radioStationNumber > 9) {
             radioStationNumber = minRadioStation;
         }
@@ -57,47 +56,16 @@ public class Radio {
 
 
     public void increaseVolume() { //Метод для увеличения громкости
-        //int maxVolume = 100;
         if (radioVolume < 100) {
-            //radioVolume = radioVolume + 1;
             int newRadioVolume = radioVolume + 1;
             setRadioVolumeRange(newRadioVolume);
-
-        }// else {
-        // currentVolume = maxVolume;
-        //radioVolume = currentVolume;
-        //}
-        // return currentVolume;
+        }
     }
 
     public void decreaseVolume() { //Метод для увеличения громкости
-        //int maxVolume = 100;
         if (radioVolume > 0) {
-            //radioVolume = radioVolume + 1;
             int newRadioVolume = radioVolume - 1;
             setRadioVolumeRange(newRadioVolume);
-
-        }// else {
-        // currentVolume = maxVolume;
-        //radioVolume = currentVolume;
-        //}
-        // return currentVolume;
+        }
     }
 }
-
-
-
-
-
-
-//public int decreaseVolume(int currentVolume) { //Метод для уменьшения громкости
-   // int minVolume = 0;
-   // if (currentVolume > 0) {
-   //     radioVolume = currentVolume - 1;
-  //  } else {
-   //     currentVolume = minVolume;
-  //      radioVolume = currentVolume;
-//    }
-//    return currentVolume;
-//}
-//}
