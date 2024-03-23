@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -58,7 +57,9 @@ public class RadioTest {
     @Test
     public void shouldChangeRadioStationForwardIfStationIsNine() {//Тест метода переключения станции на следующую. Номер станции = 9
         Radio nextStation = new Radio();
-        nextStation.next(9);
+        nextStation.setRadioStationRange(9);
+
+        nextStation.nextRadioStation();
 
         int expected = 0;
         int actual = nextStation.getCurrentRadioStationNumber();
@@ -69,7 +70,9 @@ public class RadioTest {
     @Test
     public void shouldChangeRadioStationForwardBeforeNineAndStartsFromZero() {//Тест метода переключения станции на следующую. Номер станции < 9
         Radio nextStation = new Radio();
-        nextStation.next(0);
+        nextStation.setRadioStationRange(0);
+
+        nextStation.nextRadioStation();
 
         int expected = 1;
         int actual = nextStation.getCurrentRadioStationNumber();
@@ -80,7 +83,9 @@ public class RadioTest {
     @Test
     public void shouldChangeRadioStationBackIfStationIsZero() {//Тест метода переключения станции на предыдущую. Номер станции = 0, переключить на 9.
         Radio prevStation = new Radio();
-        prevStation.prev(0);
+        prevStation.setRadioStationRange(0);
+
+        prevStation.prevRadioStation();
 
         int expected = 9;
         int actual = prevStation.getCurrentRadioStationNumber();
@@ -92,7 +97,9 @@ public class RadioTest {
     @Test
     public void shouldChangeRadioStationToZero() {//Тест метода переключения станции на предыдущую. Номер станции = 1, переключить на 0.
         Radio prevStation = new Radio();
-        prevStation.prev(1);
+        prevStation.setRadioStationRange(1);
+
+        prevStation.prevRadioStation();
 
         int expected = 0;
         int actual = prevStation.getCurrentRadioStationNumber();
@@ -104,8 +111,9 @@ public class RadioTest {
     @Test
     public void shouldChangeRadioStationBackIfStationIsNine() {//Тест метода переключения станции на предыдущую. Номер станции = 9
         Radio prevStation = new Radio();
-        prevStation.prev(9);
+        prevStation.setRadioStationRange(9);
 
+        prevStation.prevRadioStation();
         int expected = 8;
         int actual = prevStation.getCurrentRadioStationNumber();
 
@@ -169,7 +177,9 @@ public class RadioTest {
     @Test
     public void shouldIncreaseVolume() { //Тест метода увеличения громкости.
         Radio volume = new Radio();
-        volume.increaseVolume(97);
+        volume.setRadioVolumeRange(97);
+
+        volume.increaseVolume();
 
         int expected = 98;
         int actual = volume.getCurrentRadioVolume();
@@ -179,7 +189,9 @@ public class RadioTest {
     @Test
     public void shouldntIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100.
         Radio volume = new Radio();
-        volume.increaseVolume(100);
+        volume.setRadioVolumeRange(100);
+
+        volume.increaseVolume();
 
         int expected = 100;
         int actual = volume.getCurrentRadioVolume();
@@ -189,7 +201,9 @@ public class RadioTest {
     @Test
     public void shouldDecreaseVolume() { //Тест метода уменьшения громкости.
         Radio volume = new Radio();
-        volume.decreaseVolume(97);
+        volume.setRadioVolumeRange(97);
+
+        volume.decreaseVolume();
 
         int expected = 96;
         int actual = volume.getCurrentRadioVolume();
@@ -197,9 +211,11 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldntDecreaseVolume() { //Тест метода, при котором громкость не уменьшается, если громкость 0.
+    public void shouldNotDecreaseVolume() { //Тест метода, при котором громкость не уменьшается, если громкость 0.
         Radio volume = new Radio();
-        volume.decreaseVolume(0);
+        volume.setRadioVolumeRange(0);
+
+        volume.decreaseVolume();
 
         int expected = 0;
         int actual = volume.getCurrentRadioVolume();
