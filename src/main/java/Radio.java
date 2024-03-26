@@ -22,25 +22,23 @@ public class Radio {
 
 
     public void nextRadioStation() { //Метод для переключения станции на следующую
-        int minRadioStation = 0;
-        if (radioStationNumber >= 0) {
-            radioStationNumber = radioStationNumber + 1;
+        int minRadioStationNumber = 0;
+        if (radioStationNumber == 9) {
+            radioStationNumber = minRadioStationNumber;
+            return;
         }
-        if (radioStationNumber > 9) {
-            radioStationNumber = minRadioStation;
-        }
+        radioStationNumber = radioStationNumber + 1;
 
     }
 
-
     public void prevRadioStation() { //Метод для переключения станции а предыдущую
-        int maxRadioStation = 9;
-        if (radioStationNumber <= 9) {
-            radioStationNumber = radioStationNumber - 1;
+        int maxRadioStationNumber = 9;
+        if (radioStationNumber == 0) {
+            radioStationNumber = maxRadioStationNumber;
+            return;
         }
-        if (radioStationNumber < 0) {
-            radioStationNumber = maxRadioStation;
-        }
+        radioStationNumber = radioStationNumber - 1;
+
     }
 
 

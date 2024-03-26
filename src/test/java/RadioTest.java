@@ -133,7 +133,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
-//
+
 
     @Test
     public void shouldBeOutOfVolumeMinusOne() {//Граничное значение уровня звука: -1.
@@ -200,7 +200,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldntIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100.
+    public void shouldNotIncreaseVolume() { //Тест метода, при котором громкость не увеличивается, если громкость 100.
         Radio volume = new Radio();
         volume.setRadioVolumeRange(100);
 
